@@ -151,7 +151,7 @@ function main() {
             log "Pushing image $latest_image"
             [[ -z "$DRY_RUN" ]] && $docker_authd push "$latest_image"
 
-            [[ -z "$DRY_RUN" ]] && update_previous_build_sha
+            update_previous_build_sha
         fi
     done
 
