@@ -86,7 +86,7 @@ function update_previous_build_sha() {
     echo "$GIT_COMMIT" > ./PREVIOUS_BUILD_SHA
     git add .
     git commit -m "Update previous successful build"
-    git push origin
+    git push "$GIT_BRANCH"
 
     log "Updated the previous successful build in Git to $GIT_COMMIT"
 }
