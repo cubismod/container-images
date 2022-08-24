@@ -150,10 +150,10 @@ function main() {
 
             log "Pushing image $latest_image"
             [[ -z "$DRY_RUN" ]] && $docker_authd push "$latest_image"
-
-            [[ -z "$DRY_RUN" ]] && update_previous_build_sha
         fi
     done
+
+    [[ -z "$DRY_RUN" && "$origin" == "build" ]] && update_previous_build_sha
 
     return $rc
 }
