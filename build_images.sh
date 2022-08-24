@@ -153,7 +153,7 @@ function main() {
         fi
     done
 
-    [[ -z "$DRY_RUN" && "$origin" == "build" ]] && update_previous_build_sha
+    [[ -z "$DRY_RUN" ]] && [[ "$origin" == "build" ]] && update_previous_build_sha
 
     return $rc
 }
